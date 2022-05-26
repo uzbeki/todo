@@ -13,24 +13,32 @@ body {
     color: #333;
     background-color: #fff;
     display: grid;
-    justify-content: center;
+    place-content: center;
     min-height: 100vh;
 }
 
-h2 {
-    font-size: 2rem;
-    font-weight: 400;
-    margin: 0;
-    padding: 0;
-    text-align: center;
+main {
+    box-shadow: 2px 1px 5px rgba(0, 0, 0, .4);
+    height: fit-content;
+    padding: 1rem;
+    margin: 1rem;
+    max-height: 90vh;
+    display: flex;
+    flex-flow: column;
+    border-radius: 8px;
+    max-width: 500px;
 }
 
-#todo-form {
+::placeholder {
+    opacity: .6;
+}
+
+section {
     display: flex;
     align-items: flex-end;
-    
 }
-#todo-form input {
+
+section input {
     width: 100%;
     padding: .25rem .5rem;
     border: none;
@@ -40,24 +48,59 @@ h2 {
     margin: 0;
     outline: none;
 }
+
 button {
     border: none;
     background-color: transparent;
-    color: #333;
-    font-size: 1.5rem;
-    font-weight: 400;
     margin: 0;
+    margin-left: .5rem;
     padding: 0;
     outline: none;
-    line-height: 1;
+    cursor: pointer;
+    transition: all 100ms ease-in;
 }
 
-#todo_list input[type="checkbox"]:checked+label {
-    text-decoration: line-through;
+button:hover {
+    transform: scale(1.1)
+}
+
+#settings {
+    margin: .5rem 0;
+    text-align: left;
+    font-size: smaller;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: .5rem;
+    color: hsl(0, 0%, 40%);
+}
+
+input[type="checkbox"] {
+    margin: 0;
+}
+
+label {
+    user-select: none;
+    cursor: pointer;
 }
 
 ul {
+    flex: 1;
+    overflow: auto;
     list-style-type: none;
     margin: 0;
+    margin-top: 1rem;
     padding: 0;
+}
+
+li {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    margin: .75rem 0;
+}
+
+li input[type="checkbox"]:checked+label {
+    text-decoration: line-through;
+    color: rgba(0, 0, 0, .5);
 }

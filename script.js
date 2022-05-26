@@ -18,7 +18,7 @@ const appendTodo = () => {
     li.appendChild(input);
     const label = document.createElement("label");
     label.htmlFor = input.id;
-    label.innerHTML = form.todo.value + ` <button><i class="fas fa-times"></i></button>`;
+    label.innerHTML = form.todo.value + ` <button>❌</button>`;
     label.querySelector("button").onclick = deleteTodo;
     li.appendChild(label);
     ul.prepend(li);

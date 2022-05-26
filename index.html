@@ -6,42 +6,42 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
         <script src="script.js" defer></script>
         <title>Todo list</title>
     </head>
 
     <body>
         <main>
-            <h2>Todos</h2>
             <form action="" method="post" id='todo-form'>
-                <input type="text" name="todo" id="todo" placeholder="Add todo" required>
-                <button type="submit" name="submit"><i class="fas fa-plus-circle"></i></button>
+                <section>
+                    <input type="text" name="todo" id="todo" placeholder="new todo" required>
+                    <button type="submit" name="submit">➕</button>
+                </section>
             </form>
-            <div>
+            <div id='settings'>
+                <label for="autodelete">autodelete finished todos</label>
                 <input type="checkbox" name="autodelete" id="autodelete">
-                <label for="autodelete">Automatically delete finished todos</label>
             </div>
             <ul id='todo_list'>
                 <li>
                     <input type="checkbox" id="todo-0">
-                    <label for="todo-0">Buy milk <button><i class="fas fa-times"></i></button></label>
+                    <label for="todo-0">Buy milk <button>❌</button></label>
                 </li>
                 <li>
                     <input type="checkbox" id="todo-1">
-                    <label for="todo-1">Clean room <button><i class="fas fa-times"></i></button></label>
+                    <label for="todo-1">Clean room <button>❌</button></label>
                 </li>
                 <li>
                     <input type="checkbox" id="todo-2">
-                    <label for="todo-2">Learn HTML <button><i class="fas fa-times"></i></button></label>
+                    <label for="todo-2">Learn HTML <button>❌</button></label>
                 </li>
                 <li>
                     <input type="checkbox" id="todo-3">
-                    <label for="todo-3">Learn CSS <button><i class="fas fa-times"></i></button></label>
+                    <label for="todo-3">Learn CSS <button>❌</button></label>
                 </li>
                 <li>
                     <input type="checkbox" id="todo-4">
-                    <label for="todo-4">Learn JS <button><i class="fas fa-times"></i></button></label>
+                    <label for="todo-4">Learn JS <button>❌</button></label>
                 </li>
             </ul>
         </main>
