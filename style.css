@@ -5,19 +5,23 @@
 }
 
 body {
+    --text-color: #333;
+    --body-bg: #fff;
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
     line-height: 1.5;
-    color: #333;
-    background-color: #fff;
+    color: var(--text-color);
+    background-color: var(--body-bg);
     display: grid;
     place-content: center;
     min-height: 100vh;
+    transition: all 150ms ease-in-out;
 }
 
 main {
+    ----card-bg: inherit;
     box-shadow: 2px 1px 5px rgba(0, 0, 0, .4);
     height: fit-content;
     padding: 1rem;
@@ -27,6 +31,7 @@ main {
     flex-flow: column;
     border-radius: 8px;
     max-width: 500px;
+    background-color: var(--card-bg);
 }
 
 ::placeholder {
@@ -36,6 +41,11 @@ main {
 section {
     display: flex;
     align-items: flex-end;
+}
+
+input {
+    background-color: inherit;
+    color: inherit;
 }
 
 section input {
@@ -60,7 +70,8 @@ button {
     transition: all 100ms ease-in;
 }
 
-button:hover {
+button:hover,
+button:focus {
     transform: scale(1.1)
 }
 
@@ -73,10 +84,6 @@ button:hover {
     justify-content: flex-end;
     gap: .5rem;
     color: hsl(0, 0%, 40%);
-}
-
-input[type="checkbox"] {
-    margin: 0;
 }
 
 label {
@@ -103,4 +110,12 @@ li {
 li input[type="checkbox"]:checked+label {
     text-decoration: line-through;
     color: rgba(0, 0, 0, .5);
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        --body-bg: #1c1c1c;
+        --text-color: hsl(0, 0%, 90%);
+        --card-bg: hsl(0, 0%, 20%);
+    }
 }

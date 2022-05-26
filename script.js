@@ -48,3 +48,16 @@ window.onload = () => {
         });
     };
 };
+
+const keyDownHandler = e => {
+    if (e.key === "a" && e.ctrlKey) {
+        e.preventDefault();
+        const checkboxes = [...document.querySelectorAll('li input[type="checkbox"]')];
+        const everythingChecked = checkboxes.every(el => el.checked);
+        checkboxes.forEach(el => (el.checked = !everythingChecked));
+    } else if (e.key == "Delete" && e.ctrlKey) {
+        document.querySelectorAll('li input[type="checkbox"]:checked').forEach(el => el.closest("li").remove());
+    }
+};
+
+document.onkeydown = keyDownHandler;

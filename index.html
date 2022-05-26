@@ -14,7 +14,7 @@
         <main>
             <form action="" method="post" id='todo-form'>
                 <section>
-                    <input type="text" name="todo" id="todo" placeholder="new todo" required>
+                    <input type="text" name="todo" id="todo" placeholder="new todo" required autofocus>
                     <button type="submit" name="submit">➕</button>
                 </section>
             </form>
@@ -22,7 +22,7 @@
                 <label for="autodelete">autodelete finished todos</label>
                 <input type="checkbox" name="autodelete" id="autodelete">
             </div>
-            <ul id='todo_list'>
+            <ul id='todo_list' title='press ctrl+A to select all, ctrl+delete to delete all selected.'>
                 <li>
                     <input type="checkbox" id="todo-0">
                     <label for="todo-0">Buy milk <button>❌</button></label>
